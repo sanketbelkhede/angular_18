@@ -1,1 +1,56 @@
-<p>data-binding works!</p>
+<div class="row">
+  <div class="col-4">
+    <h2>One Way - from .ts to .html</h2>
+  </div>
+  <div class="col-4">
+
+  </div>
+  <div class="col-4">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="col-4 bg-success">
+        <div>Interpolation</div>
+        <h4>{{courseName}}</h4>
+        <h4>{{currentDate}}</h4>
+        <input type="text" value="{{courseName}}" placeholder="Enter text">
+        <input type="{{inputType}}">
+      </div>
+      <div class="col-4">
+        <div>Property Binding</div>
+        <div [class]="myClassName">Danger</div>
+        <input type="text" [value]="courseName">
+        <input [type]="inputType">
+      </div>
+      <div class="col-4">
+        <div>Event Binding</div>
+        <div class="btn btn-success" (click)="showAlert('Welcome Angular 18')">Show Welcome</div>
+        <span (click)="showAlert('This is from Span')">Click Me</span>
+        <div class="btn btn-success" (click)="changeCourseName()">Change Course</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-6">
+    <div>Two Way Data Binding using [(ngMode)]</div>
+    <input type="text" [(ngModel)]="courseName"/> -- {{courseName}}
+    <input type="checkbox" [(ngModel)]="isIndian">
+
+    <select [(ngModel)]="stateName">
+      <option value="">Select</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Goa">Goa</option>
+      <option value="Punjab">Punjab</option>
+    </select>
+  </div>
+
+  <div class="col-4">
+    <h2>{{firstName()}}</h2>
+    <div class="btn btn-success" (click)="changeFirstName()">Change Name</div>
+  </div>
+</div>
