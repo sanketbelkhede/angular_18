@@ -1,6 +1,7 @@
 <div class="mt-2 p-2 bg-secondary text-white rounded">
   <h1>Structural Directive</h1>
   <p>*ngIf, *ngFor...</p>
+    <button class="btn btn-primary" (click)="navigateToAttribute()">Go To Attribute</button>
 </div>
 <div class="row pt-3 bgblue">
   <div class="col-3">
@@ -35,8 +36,8 @@
   </div>
   <div class="col-3">
     <div style="display: flex; align-items: center">
-      <input type="text" [(ngModel)]="num1" placeholder="Num-1" class="width-50">
-      <input type="text" [(ngModel)]="num2" placeholder="Num-2" class="width-50">
+      <input type="text" [(ngModel)]="num1" placeholder="Num-1" style="width: 50%">
+      <input type="text" [(ngModel)]="num2" placeholder="Num-2" style="width: 50%">
     </div>
   </div>
   <div class="col-3">

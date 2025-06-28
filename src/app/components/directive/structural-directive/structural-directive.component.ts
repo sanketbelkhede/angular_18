@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-structural-directive',
@@ -28,7 +29,14 @@ export class StructuralDirectiveComponent {
     {studentId: 6, name: 'FFF', city: 'Nagpur', isActive: false},
   ]
 
+  constructor(private router: Router) {
+  }
+
   toggleDiv2() {
     this.isDiv2Visible = !this.isDiv2Visible;
+  }
+
+  navigateToAttribute() {
+    this.router.navigateByUrl('/attribute-directive')
   }
 }
