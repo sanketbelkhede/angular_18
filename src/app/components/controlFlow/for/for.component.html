@@ -1,0 +1,59 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Control Flow Statement</h1>
+  <h3><span>&#64;</span>For, <span>&#64;</span>Switch Case</h3>
+</div>
+
+<div class="row pt-3">
+  <div class="col-3">
+    <ul>
+      @for (item of cities; track $index) {
+        <li>{{item}}</li>
+      }
+    </ul>
+  </div>
+  <div class="col-3">
+    @for (item of cities; track $index) {
+      <div>{{item}}</div>
+    }
+  </div>
+  <div class="col-3">
+    <select>
+      @for (item of cities; track $index) {
+        <option>{{item}}</option>
+      }
+    </select>
+  </div>
+  <div class="col-3">
+    <select>
+      @for (student of studentList; track $index) {
+        <option [value]="student.studentId">{{student.name}}</option>
+      }
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (student of studentList; track $index) {
+          <tr>
+            <td>{{$index + 1}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.isActive}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
