@@ -1,6 +1,8 @@
 <div class="mt-2 p-2 bg-secondary text-white rounded">
-  <h1>Attribute Directive</h1>
-  <p>[ngClass], [ngStyle]</p>
+    <h1>Attribute Directive</h1>
+    <p>[ngClass], [ngStyle]</p>
+    <button class="btn btn-primary" [routerLink]="['/structural-directive']">Go To Structural</button>
+<!--    <button class="btn btn-primary" routerLink="/structural-directive">Go To Structural</button> &lt;!&ndash; use / for absolute path &ndash;&gt;-->
 </div>
 <div class="row pt-3">
   <div class="col-3">
@@ -35,8 +37,8 @@
   </div>
   <div class="col-3">
     <div style="display: flex; align-items: center">
-      <input type="text" [(ngModel)]="num1" placeholder="Num-1" class="width-50">
-      <input type="text" [(ngModel)]="num2" placeholder="Num-2" class="width-50">
+      <input type="text" [(ngModel)]="num1" placeholder="Num-1" style="width: 50%">
+      <input type="text" [(ngModel)]="num2" placeholder="Num-2" style="width: 50%">
     </div>
   </div>
   <div class="col-3">

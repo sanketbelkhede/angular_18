@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-attribute-directive',
@@ -11,7 +12,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
     NgClass,
     FormsModule,
-    NgStyle
+    NgStyle,
+    RouterLink
   ],
   templateUrl: './attribute-directive.component.html',
   styleUrl: './attribute-directive.component.css'
