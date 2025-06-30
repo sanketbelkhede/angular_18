@@ -47,32 +47,47 @@
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link active" routerLink="emp-list">Employee List</a>
-        </li>
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link" routerLink="add-emp">Add Employee</a>
-        </li>
-        <li class="nav-item" style="margin-top:-12px;">
+<!--        <li class="nav-item" style="margin-top:-12px;">-->
+<!--          <a class="nav-link active" routerLink="emp-list">Employee List</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item" style="margin-top:-12px;">-->
+<!--          <a class="nav-link" routerLink="add-emp">Add Employee</a>-->
+<!--        </li>-->
+        <li class="nav-item">
           <a class="nav-link" routerLink="data-binding">Data Binding</a>
         </li>
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link" routerLink="structural-directive">Structural Directive</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Directive</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="structural-directive">Structural Directive</a></li>
+            <li><a class="dropdown-item" routerLink="attribute-directive">Attribute Directive</a></li>
+          </ul>
         </li>
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link" routerLink="attribute-directive">Attribute Directive</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Control Flow</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="for">For</a></li>
+            <li><a class="dropdown-item" routerLink="if-else">If Else</a></li>
+            <li><a class="dropdown-item" routerLink="switch-case">Switch Case</a></li>
+          </ul>
         </li>
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link" routerLink="for">For</a>
-        </li>
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link" routerLink="if-else">If Else</a>
-        </li>
-        <li class="nav-item" style="margin-top:-12px;">
-          <a class="nav-link" routerLink="switch-case">Switch Case</a>
-        </li>
-        <li class="nav-item" style="margin-top:-12px;">
+<!--        <li class="nav-item" style="margin-top:-12px;">-->
+<!--          <a class="nav-link" routerLink="for">For</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item" style="margin-top:-12px;">-->
+<!--          <a class="nav-link" routerLink="if-else">If Else</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item" style="margin-top:-12px;">-->
+<!--          <a class="nav-link" routerLink="switch-case">Switch Case</a>-->
+<!--        </li>-->
+        <li class="nav-item">
           <a class="nav-link" routerLink="pipe">Pipe</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Forms</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="template-form">Template Form</a></li>
+          </ul>
         </li>
       </ul>
       <form class="d-flex">
