@@ -1,0 +1,30 @@
+<div class="row pt-3">
+    <div class="col-2">
+        <button class="btn btn-success" (click)="getAllUsers()">Get Users</button>
+    </div>
+    <div class="col-3">
+        @if(userList.length!=0) {
+            <select class="form-select">
+                @for (item of userList; track $index) {
+                    <option value="{{item.id}}">{{item.name}}</option>
+                }
+            </select>
+        }
+
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-2">
+        <button class="btn btn-success" (click)="getAllCustomers()">Get Customers</button>
+    </div>
+    <div class="col-3">
+        @if(customerList.length!=0) {
+            <select class="form-select">
+                @for (item of customerList; track $index) {
+                    <option value="{{item.id}}">{{item.name}}</option>
+                }
+            </select>
+        }
+
+    </div>
+</div>
