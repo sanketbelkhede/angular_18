@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {iterator} from "rxjs/internal/symbol/iterator";
+import {DepartmentService} from "../../../service/department.service";
 
 @Component({
   selector: 'app-post-api',
@@ -29,9 +30,12 @@ export class PostAPIComponent {
 
 
   http = inject(HttpClient);
+  departmentService = inject(DepartmentService);
 
-  // constructor(private http: HttpClient) {
-  // }
+  constructor() {
+    //Just calling a service
+    const result = this.departmentService.addTwoNo(1,2);
+  }
 
   reset() {
     this.departmentObj = {
@@ -41,7 +45,7 @@ export class PostAPIComponent {
     }
   }
 
-  onSave() {
+  // onSave() {
     // this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment", this.departmentObj).subscribe((res:any)=>{
     //   if(res.result) {
     //     alert("Department added successfully.");
@@ -49,6 +53,22 @@ export class PostAPIComponent {
     //     alert(res.message);
     //   }
     //
+    // })
+    // this.departmentObj.departmentId = "0";
+    // this.departmentList.push(this.departmentObj);
+    // alert("Added Successfully!");
+    // this.reset();
+  //
+  // }
+
+  // By Using Service
+  onSave() {
+    // this.departmentService.saveNewDepartment(this.departmentObj).subscribe((res:any)=>{
+    //     if(res.result) {
+    //       alert("Department added successfully.");
+    //     }else {
+    //       alert(res.message);
+    //     }
     // })
     this.departmentObj.departmentId = "0";
     this.departmentList.push(this.departmentObj);

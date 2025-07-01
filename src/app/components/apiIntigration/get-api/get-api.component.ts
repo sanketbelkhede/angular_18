@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import {DepartmentService} from "../../../service/department.service";
 
 @Component({
   selector: 'app-get-api',
@@ -14,11 +15,18 @@ export class GetAPIComponent {
   userList: any [] = [];
   customerList: any [] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private departmentService: DepartmentService) {
   }
 
+  // getAllUsers() {
+  //   this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res:any) => {
+  //     this.userList = res;
+  //   })
+  // }
+
+  // By Using Service
   getAllUsers() {
-    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res:any) => {
+    this.departmentService.getAllUsers().subscribe((res:any) => {
       this.userList = res;
     })
   }
