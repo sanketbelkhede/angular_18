@@ -67,10 +67,10 @@
             <div class="col-6 text-center">
               @if (departmentObj.departmentId == "") {
 <!--                <button class="btn btn-success" (click)="onSave()">Save</button>-->
-                <app-my-button (onBtnClick)="onSave()" [btnClass]="'btn-success'" [btnText]="'Save'"></app-my-button>
+                <app-my-button (onBtnClick)="onSave()" [disabled]="(departmentObj.departmentName == '' || departmentObj.departmentLogo == '')" [btnClass]="'btn-success'" [btnText]="'Save'"></app-my-button>
               } @else {
 <!--                <button class="btn btn-warning" (click)="onUpdate()">Update</button>-->
-                <app-my-button (onBtnClick)="onUpdate()" [btnClass]="'btn-warning'" [btnText]="'Update'"></app-my-button>
+                <app-my-button (onBtnClick)="onUpdate()" [disabled]="(departmentObj.departmentName == '' || departmentObj.departmentLogo == '')" [btnClass]="'btn-warning'" [btnText]="'Update'"></app-my-button>
               }
             </div>
           </div>
