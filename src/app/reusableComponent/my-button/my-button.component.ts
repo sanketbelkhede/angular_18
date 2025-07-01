@@ -10,10 +10,13 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class MyButtonComponent {
   @Input() btnText: string = "";
   @Input() btnClass: string = "";
+  @Input() disabled: boolean = false;
+
 
   @Output() onBtnClick = new EventEmitter<any>();
 
   onClick() {
+    console.log(this.disabled)
     this.onBtnClick.emit("Hello There!");
   }
 }
