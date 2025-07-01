@@ -2,6 +2,10 @@
   <h4>Post API, Update & Delete</h4>
   <h3>Create Department, Department List</h3>
 </div>
+
+<app-alert [message]="'Welcome To POST Page'" [alertType]="'Success'"></app-alert>
+<app-alert [message]="'Some Error Occured'" [alertType]="'Error'"></app-alert>
+<app-my-button (onBtnClick)="getData($event)" [btnClass]="'btn-success'" [btnText]="'Get Data'"></app-my-button>
 <div class="row pt-2">
   <div class="col-8">
     <div class="card">
@@ -27,8 +31,10 @@
                   <td>{{item.departmentName}}</td>
                   <td>{{item.departmentLogo}}</td>
                   <td>
-                    <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>
-                    <button class="btn btn-danger mx-2" (click)="onDelete(item.departmentId)">Delete</button>
+<!--                    <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>-->
+                    <app-my-button (onBtnClick)="onEdit(item)" [btnClass]="'btn-primary'" [btnText]="'Edit'"></app-my-button>
+                    <app-my-button (onBtnClick)="onDelete($index)" [btnClass]="'btn-danger mx-2'" [btnText]="'Delete'"></app-my-button>
+<!--                    <button class="btn btn-danger mx-2" (click)="onDelete(item.departmentId)">Delete</button>-->
                   </td>
                 </tr>
               }
@@ -47,22 +53,24 @@
       <div class="card-body">
         <div class="row">
           <div class="col-12">
-            <label for="">Department Name</label>
+            <label>Department Name</label>
             <input type="text" [(ngModel)]="departmentObj.departmentName" class="form-control" placeholder="Enter Name">
           </div>
           <div class="col-12">
-            <label for="">Department Logo</label>
+            <label>Department Logo</label>
             <input type="text" [(ngModel)]="departmentObj.departmentLogo" class="form-control" placeholder="Enter Logo Url">
           </div>
           <div class="row pt-3">
             <div class="col-6 text-center">
-              <button class="btn btn-secondary">Reset</button>
+              <button class="btn btn-secondary" (click)="reset()">Reset</button>
             </div>
             <div class="col-6 text-center">
               @if (departmentObj.departmentId == "") {
-                <button class="btn btn-success" (click)="onSave()">Save</button>
+<!--                <button class="btn btn-success" (click)="onSave()">Save</button>-->
+                <app-my-button (onBtnClick)="onSave()" [btnClass]="'btn-success'" [btnText]="'Save'"></app-my-button>
               } @else {
-                <button class="btn btn-warning" (click)="onUpdate()">Update</button>
+<!--                <button class="btn btn-warning" (click)="onUpdate()">Update</button>-->
+                <app-my-button (onBtnClick)="onUpdate()" [btnClass]="'btn-warning'" [btnText]="'Update'"></app-my-button>
               }
             </div>
           </div>

@@ -3,12 +3,16 @@ import {HttpClient} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {iterator} from "rxjs/internal/symbol/iterator";
 import {DepartmentService} from "../../../service/department.service";
+import {AlertComponent} from "../../../reusableComponent/alert/alert.component";
+import {MyButtonComponent} from "../../../reusableComponent/my-button/my-button.component";
 
 @Component({
   selector: 'app-post-api',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    AlertComponent,
+    MyButtonComponent
   ],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
@@ -81,14 +85,19 @@ export class PostAPIComponent {
     this.departmentObj = data;
   }
 
-  onDelete(id: number) {
+  onDelete(index: number) {
     const isDelete = confirm("Are you sure you want to delete?");
     if (isDelete) {
-      for(let department of this.departmentList) {
-        if(department.departmentId === id) {
-          this.departmentList.splice(department, 1);
-        }
-      }
+      //based on index
+      this.departmentList.splice(index,1);
+
+      //based on Id when using API
+      // this.departmentList.forEach((department,idx) => {
+      //   if(department.departmentId === index) {
+      //     this.departmentList.splice(idx,1);
+      //   }
+      // });
+
       // this.http.delete("https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=" + id).subscribe((res:any)=>{
       //   if(res.result) {
       //     alert("Department Updated successfully.");
@@ -111,6 +120,10 @@ export class PostAPIComponent {
     //
     // })
     this.reset();
+  }
+
+  getData(data:any) {
+    alert(data);
   }
 
 }
