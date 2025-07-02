@@ -20,6 +20,8 @@ export class GetAPIComponent {
   userList: any [] = [];
   customerList: any [] = [];
 
+  alertMsg: string = "Welcome to GET API Page"
+
   constructor(private http: HttpClient, private departmentService: DepartmentService) {
   }
 
@@ -43,5 +45,9 @@ export class GetAPIComponent {
     }, error => {
       console.log(error);
     })
+  }
+
+  changeMsg() {
+    this.alertMsg = "Message Changed";
   }
 }

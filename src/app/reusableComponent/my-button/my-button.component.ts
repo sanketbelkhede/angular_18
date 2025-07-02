@@ -16,7 +16,6 @@ export class MyButtonComponent {
   @Output() onBtnClick = new EventEmitter<any>();
 
   onClick() {
-    console.log(this.disabled)
     this.onBtnClick.emit("Hello There!");
   }
 }
