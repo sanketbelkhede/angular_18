@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {NgClass} from "@angular/common";
 
 @Component({
@@ -10,7 +10,12 @@ import {NgClass} from "@angular/common";
   templateUrl: './alert.component.html',
   styleUrl: './alert.component.css'
 })
-export class AlertComponent {
+export class AlertComponent implements OnChanges{
   @Input() message: string = "";
   @Input() alertType: string = "";
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("ngOnChanges");
+  }
 }
