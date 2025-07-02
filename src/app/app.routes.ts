@@ -13,6 +13,7 @@ import {ReactiveComponent} from "./components/forms/reactive/reactive.component"
 import {GetAPIComponent} from "./components/apiIntigration/get-api/get-api.component";
 import {PostAPIComponent} from "./components/apiIntigration/post-api/post-api.component";
 import {LifecycleEventComponent} from "./components/lifecycle-event/lifecycle-event.component";
+import {NgtemplateComponent} from "./components/ngtemplate/ngtemplate.component";
 
 export const routes: Routes = [
   {
@@ -70,5 +71,9 @@ export const routes: Routes = [
   {
     path: 'life-cycle',
     component: LifecycleEventComponent
+  },
+  {
+    path: 'ng-template',
+    component: NgtemplateComponent
   }
 ];
